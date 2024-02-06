@@ -10,5 +10,6 @@ namespace FirstSPAapp.Server.Services.Interfaces
         PostModel Get(int id);
         List<PostModel> Get();
         void Delete(int id);
+        //sdfdsdf
     }
 }
