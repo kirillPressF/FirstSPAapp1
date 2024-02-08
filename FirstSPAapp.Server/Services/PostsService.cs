@@ -4,13 +4,15 @@ using FirstSPAapp.Server.Services.Interfaces;
 
 namespace FirstSPAapp.Server.Services
 {
-    public class PostService : IPostService
+    public class PostsService : IPostsService
     {
-        private MyDataContext _dataContext; 
-        public PostService(MyDataContext context)
+        private MyDataContext _dataContext;
+
+        public PostsService(MyDataContext context)
         {
             this._dataContext = context;
         }
+
         public PostModel Create(PostModel model)
         {
             var last = _dataContext.Posts.LastOrDefault();
@@ -22,7 +24,7 @@ namespace FirstSPAapp.Server.Services
 
         public PostModel Update(PostModel model)
         {
-            var modelToUpdate = _dataContext.Posts.FirstOrDefault(x=>x.Id==model.Id);
+            var modelToUpdate = _dataContext.Posts.FirstOrDefault(x => x.Id == model.Id);
             if (modelToUpdate != null)
             {
                 modelToUpdate.Header = model.Header;
@@ -31,6 +33,7 @@ namespace FirstSPAapp.Server.Services
 
             return modelToUpdate;
         }
+
         public void Delete(int id)
         {
             if (id >= 0 && _dataContext.Posts.Any(x => x.Id == id))
@@ -43,13 +46,13 @@ namespace FirstSPAapp.Server.Services
         {
             if (id >= 0 && _dataContext.Posts.Any(x => x.Id == id))
             {
-                var modelToReturn = _dataContext.Posts.FirstOrDefault(x => x.Id == id);
+                return _dataContext.Posts.FirstOrDefault(x => x.Id == id);
             }
 
             return null;
         }
 
-        public List<PostModel> Get() =>_dataContext.Posts;
+        public List<PostModel> Get() => _dataContext.Posts;
 
     }
 }

@@ -1,3 +1,7 @@
+using FirstSPAapp.Server.Data;
+using FirstSPAapp.Server.Services;
+using FirstSPAapp.Server.Services.Interfaces;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddSingleton<MyDataContext>()
+    .AddTransient<IPostsService, PostsService>();
 
 var app = builder.Build();
 

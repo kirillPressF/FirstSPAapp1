@@ -1,4 +1,5 @@
 ﻿using FirstSPAapp.Server.Models;
+using FirstSPAapp.Server.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,30 +9,36 @@ namespace FirstSPAapp.Server.Controllers
     [ApiController]
     public class PostsController : ControllerBase
     {
-        [HttpPost]
-        public object Create(PostModel model)
+        private IPostsService _postsService;
+        public PostsController(IPostsService postsService)
         {
-
+            _postsService = postsService;
+        }
+        [HttpPost]
+        public PostModel Create(PostModel model)
+        {
+            return _postsService.Create(model);
         }
         [HttpPatch]
-        public object Update(PostModel model)
+        public PostModel Update(PostModel model)
         {
-
+            return _postsService.Update(model);
         }
         [HttpGet("{id}")]
-        public object Get(int id)
+        public PostModel Get(int id)
         {
-
+            return _postsService.Get(id);
         }
         [HttpGet]
-        public object GetAll()
+        public IEnumerable<PostModel> GetAll()
         {
-
+            return _postsService.Get();
         }
         [HttpDelete("{id}")]
-        public object Delete(int id)
-        {
-
+        public IActionResult Delete(int id)
+        { 
+            _postsService.Delete(id);
+            return Ok();
         }
     }
 }

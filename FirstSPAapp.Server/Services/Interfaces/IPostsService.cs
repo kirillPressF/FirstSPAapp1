@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FirstSPAapp.Server.Services.Interfaces
 {
-    public interface IPostService
+    public interface IPostsService
     {
         PostModel Create(PostModel model);
         PostModel Update(PostModel model);
