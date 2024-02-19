@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import './App.css';
-
+import { Link } from 'react-router-dom';
 function App() {
     const [forecasts, setForecasts] = useState();
 
@@ -34,9 +34,13 @@ function App() {
     return (
         <div>
             <h1 id="tabelLabel">Weather forecast</h1>
+            <Link to={'/Todo'}>
+            <button type ="button" className='btn btn-outline-primary'>ToDo page</button>
+            </Link>
             <p>This component demonstrates fetching data from the server.</p>
             {contents}
         </div>
+
     );
     
     async function populateWeatherData() {

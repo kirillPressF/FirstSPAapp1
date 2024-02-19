@@ -1,0 +1,37 @@
+.content-block{
+    border-style: dotted;
+    border-color: rgb(189, 188, 188);
+    padding: 15px;
+    border-radius: 15px;
+    display: block;
+    margin: auto;
+}
+@media (max-width: 768px) {
+    .content-block {
+        width: 80vw;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 1200px) {
+    .content-block {
+        width: 60vw;
+    }
+  }
+  @media (min-width: 1200px) {
+    .content-block {
+        width: 40vw;
+    }
+  }
+/*   Existing block */
+  .content-block button{
+    display: flex;
+  }
+  .posts{
+    padding: 5px;
+    text-align: start;
+  }
+  .posts hr{
+    margin: 0 0 20px 0;
+  }
+  .existing_post{
+    border-style: solid;
+  }
