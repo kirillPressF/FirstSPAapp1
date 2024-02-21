@@ -3,8 +3,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-import Posts from './pages/ToDo.jsx'
-
+import Posts from './pages/Posts.jsx'
 
 import { createBrowserRouter, RouterProvider, } from 'react-router-dom'
 
@@ -14,7 +13,7 @@ const router = createBrowserRouter([
     element: <App/>,
   },
 {
-  path: '/ToDo',
+  path: '/Posts',
   element: <Posts/>,
 }
 ]);

@@ -50,10 +50,10 @@ export default defineConfig({
                 target: 'https://localhost:7014/',
                 secure: false
             },
-            '^/posts': {
-                target: 'http://localhost:5104',
+/*             '^/вв': {
+                target: 'https://localhost:7014/',
                 secure: false
-            },
+            }, */
         },
         port: 5173,
         https: {

@@ -34,7 +34,7 @@ function App() {
     return (
         <div>
             <h1 id="tabelLabel">Weather forecast</h1>
-            <Link to={'/Todo'}>
+            <Link to={'/Posts'}>
             <button type ="button" className='btn btn-outline-primary'>ToDo page</button>
             </Link>
             <p>This component demonstrates fetching data from the server.</p>

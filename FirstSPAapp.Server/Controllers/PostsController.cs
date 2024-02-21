@@ -1,10 +1,13 @@
-﻿using FirstSPAapp.Server.Models;
+﻿using System.Web.Http.Cors;
+using FirstSPAapp.Server.Models;
 using FirstSPAapp.Server.Services.Interfaces;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FirstSPAapp.Server.Controllers
 {
+    [Route("api/FileApi/uploadData")]
     [Route("api/[controller]")]
     [ApiController]
     public class PostsController : ControllerBase
@@ -14,6 +17,7 @@ namespace FirstSPAapp.Server.Controllers
         {
             _postsService = postsService;
         }
+        //[System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
         [HttpPost]
         public PostModel Create(PostModel model)
         {
