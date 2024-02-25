@@ -17,7 +17,6 @@ namespace FirstSPAapp.Server.Controllers
         {
             _postsService = postsService;
         }
-        //[System.Web.Http.Cors.EnableCors(origins: "*", headers: "*", methods: "*")]
         [HttpPost]
         public PostModel Create(PostModel model)
         {

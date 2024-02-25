@@ -28,10 +28,26 @@
   .posts{
     padding: 5px;
     text-align: start;
+    word-wrap: break-word;
   }
   .posts hr{
     margin: 0 0 20px 0;
   }
   .existing_post{
     border-style: solid;
+  }
+  .container-buttons{
+  display: flex;
+  justify-content:start;
+  }
+  .container-buttons button{
+    margin-right: 10px;
+  }
+  .modal-content{
+    display: flex;
+  }
+  .link{
+    display: flex;
+    justify-content: start;
+    text-align: start;
   }
